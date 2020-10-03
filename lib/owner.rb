@@ -50,7 +50,7 @@ class Owner
       # binding.pry
       dog.mood = "happy"
     end
-    dogs
+    # dogs
   end 
   
 end
