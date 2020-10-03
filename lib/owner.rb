@@ -48,6 +48,7 @@ class Owner
     binding.pry
     dogs = self.dogs 
     dogs.each do |dog|
+      binding.pry
       @mood = "happy"
     end
     dogs
