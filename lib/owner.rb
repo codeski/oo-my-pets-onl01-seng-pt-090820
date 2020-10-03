@@ -34,9 +34,8 @@ class Owner
     Dog.all.find_all {|dog| dog.owner == self}
   end
   
-  def buy_cat(cat_name)
-    new_cat = Cats.all.find {|cat| cat == cat_name}
-    new_cat.owner = self
+  def buy_cat(cat_name) 
+    Cat.new(cat_name, self)
   end
     
   
