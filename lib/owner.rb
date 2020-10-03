@@ -1,3 +1,43 @@
 class Owner
-  # code goes here
+  
+  attr_reader :name, :species 
+  
+  @@all = []
+  
+  def initialize(name)
+    @name = name
+    @species = "human"
+    @@all << self
+  end
+  
+  def say_species
+    "I am a #{self.species}."
+  end
+  
+  def self.all 
+    @@all 
+  end
+  
+  def self.count 
+    @@all.count
+  end
+  
+  def self.reset_all 
+    @@all.clear 
+  end
+  
+  def cats 
+    Cat.all.find_all {|cat| cat.owner == self}
+  end
+  
+  def dogs 
+    Dog.all.find_all {|dog| dog.owner == self}
+  end
+  
+  def buy_cat(cat_name)
+    new_cat = Cats.all.find {|cat| cat == cat_name}
+    new_cat.owner = self
+  end
+    
+  
 end
