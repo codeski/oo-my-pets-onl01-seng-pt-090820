@@ -1,3 +1,5 @@
+require 'pry'
+
 class Owner
   
   attr_reader :name, :species 
@@ -41,6 +43,10 @@ class Owner
   def buy_dog(dog_name)
     Dog.new(dog_name, self)
   end
-    
+  
+  def walk_dogs 
+    binding.pry
+    self.dogs 
+  end 
   
 end
